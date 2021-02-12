@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Util from '../util'
 import Movie from '../components/Movie';
 import './Home.css';
 
@@ -14,7 +15,7 @@ class Home extends React.Component {
       data: {
         data: { movies }
       }
-    } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating');
+    } = await axios.get(Util.MOVIE_URL);
     this.setState({ movies, isLoading: false });
   }
 
