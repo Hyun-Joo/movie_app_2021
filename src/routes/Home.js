@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Util from '../util'
+import { MOVIE_URL } from '../js/constants';
 import Movie from '../components/Movie';
 import './Home.css';
 
@@ -15,7 +15,7 @@ class Home extends React.Component {
       data: {
         data: { movies }
       }
-    } = await axios.get(Util.MOVIE_URL);
+    } = await axios.get(MOVIE_URL);
     this.setState({ movies, isLoading: false });
   }
 
